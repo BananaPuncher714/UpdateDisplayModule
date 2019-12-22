@@ -77,7 +77,7 @@ public class EventDisplayCommand implements CommandExecutor, TabCompleter {
 			aos.add( "setcolor" );
 			aos.add( "setenabled" );
 		} else if ( args.length == 2 ) {
-			if ( args[ 0 ].equalsIgnoreCase( "enabled" ) ) {
+			if ( args[ 0 ].equalsIgnoreCase( "setenabled" ) ) {
 				aos.add( "true" );
 				aos.add( "false" );
 			}
