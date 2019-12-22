@@ -1,0 +1,9 @@
+{
+    "name": "EventDisplay",
+	"main": "io.github.bananapuncher714.cartographer2.module.eventdisplay.EventDisplayModule",
+	"description": "Debug BlockPhysicsEvents and see where they happen",
+	"version": "1.6",
+	"author": "BananaPuncher714",
+	"website": "aaaaahhhhhhh.com",
+	"depend": []
+}
