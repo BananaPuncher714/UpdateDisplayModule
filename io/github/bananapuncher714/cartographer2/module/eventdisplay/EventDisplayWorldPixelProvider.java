@@ -24,7 +24,7 @@ public class EventDisplayWorldPixelProvider implements WorldPixelProvider {
 	public Collection< WorldPixel > getWorldPixels( Player player, Minimap map, PlayerSetting setting ) {
 		Set< WorldPixel > pixels = new HashSet< WorldPixel >();
 		
-		if ( module.isOn() ) {
+		if ( module.isOn() && player.hasPermission( module.getPermission() ) ) {
 			// Create a new WorldPixel from every location, with the given color
 			for ( Location location : module.getLocations() ) {
 				WorldPixel pixel = new WorldPixel( location.getWorld(), location.getBlockX(), location.getBlockZ(), new Color( module.getColor() ) );
