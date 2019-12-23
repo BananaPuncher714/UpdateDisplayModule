@@ -28,8 +28,17 @@ public class EventDisplayWorldPixelProvider implements WorldPixelProvider {
 			// Create a new WorldPixel from every location, with the given color
 			for ( Location location : module.getLocations() ) {
 				WorldPixel pixel = new WorldPixel( location.getWorld(), location.getBlockX(), location.getBlockZ(), new Color( module.getColor() ) );
+				pixel.setDepth( 65535 );
 				pixels.add( pixel );
 			}
+			
+			Location loc = setting.getLocation();
+			WorldPixel chunkPix = new WorldPixel( loc.getWorld(), loc.getBlockX() & ~0xF, loc.getBlockZ() & ~0xF , new Color( 255, 255, 0, 128 ) );
+			chunkPix.setWidth( 16 );
+			chunkPix.setHeight( 16 );
+			chunkPix.setDepth( 0 );
+			
+			pixels.add( chunkPix );
 		}
 		
 		return pixels;
